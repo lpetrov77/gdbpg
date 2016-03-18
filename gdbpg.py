@@ -339,11 +339,13 @@ def is_a(n, t):
 
 
 def is_node(l):
-	'''return True if the value looks like a Node (has 'type' field)'''
+	'''return True if the value looks like a Node (has 'type' field of type "NodeTag")'''
 
 	try:
 		x = l['type']
-		return True
+		if str(x.type) == "NodeTag":
+			return True
+		return False
 	except:
 		return False
 
